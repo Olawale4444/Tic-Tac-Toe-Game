@@ -8,12 +8,11 @@ board = ["-", "-", "-",
 #If the Game is still going on
 gameIsOngoing = True
 
-#who won
+#who's the winner
 winner = None 
 
 #Whos turn is it
 currentPlayer = "x"
-
 
 def displayBoard():
 	print(board[0] + " | "  + board[1] + " | " + board[2] )
@@ -22,10 +21,8 @@ def displayBoard():
 
 #Play a game of tictac toe
 def playGame():
-
 	#display initial game board
 	displayBoard()
-
 	while gameIsOngoing:
 		global winner 
 
@@ -36,7 +33,7 @@ def playGame():
 		#Game over returns winner and turns gameIsOngoing to false
 		#thereby breaking out of the loop
 		checkGameOver()
-
+		
 		#Flip to the other player
 		flipTurn()
 
@@ -69,7 +66,6 @@ def checkIfWin():
 
 	#check diagonals
 	diagonalWinner= checkDiagonals()
-
 
 	if rowWinner =="x":
 		#if rowWinner is true, 
@@ -107,9 +103,7 @@ def checkRows():
 		return board[6]
 	return
 
-
 def checkColumns():
-
 	global gameIsOngoing
 	#setup global variables
 
@@ -130,17 +124,14 @@ def checkColumns():
 		return board[2]
 	return
 
-
 def checkDiagonals():
-
 	global gameIsOngoing
 	#setup global variables
 
-	#check if any of the column have same values and is not a dash
+	#check if any of the columns have same values and is not a dash
 	diagonal_1 = board[0] == board[4] == board[8] != "-"
 	diagonal_2 = board[6] == board[4] == board[2] != "-"
 	
-
 	if diagonal_1 or diagonal_2:
 		#i.e if they are all true, Then this shows that theres a win
 		gameIsOngoing = False 
@@ -150,7 +141,6 @@ def checkDiagonals():
 	elif diagonal_2:
 		return board[6]
 	return
-
 
 def checkIfTie():
 	return
