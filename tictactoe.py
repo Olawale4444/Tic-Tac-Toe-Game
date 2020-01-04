@@ -1,6 +1,4 @@
-
 #Game Board
-
 board = ["-", "-", "-",
 		"-", "-", "-",
 		"-", "-", "-",]
@@ -135,6 +133,7 @@ def checkDiagonals():
 	if diagonal_1 or diagonal_2:
 		#i.e if they are all true, Then this shows that theres a win
 		gameIsOngoing = False 
+		
 	#return the winner, X or O
 	if diagonal_1:
 		return board[0]
@@ -144,8 +143,6 @@ def checkDiagonals():
 
 def checkIfTie():
 	return
-
 def flipTurn():
 	return
-
 playGame()
